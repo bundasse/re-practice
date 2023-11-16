@@ -7,14 +7,17 @@ function Body(props) {
     // 리액트는 {}만 쓰고 렌더링할 변수를 입력하면 된다.
     // 근데 숫자 문자열 불린 null undefined만 됨... 배열?안됨. 객체? 안됨.
     // 객체를 찍으려면 프로퍼티에 접근해서 값을 가져오는 수밖에 없다.
+    const {name, location} = props;
+    // 프롭스를 여러개 보낼때는 이렇게 쓴다.
     return (
         <body>
             <div class="body" style={{background:"yellow"}}>
             {/* style을 인라인 규칙으로 쓸때는 콧수염하고 객체 형식으로 써주셈 */}
                 body
             </div>
-            {props.name}
-            {/* props를 받을 땐 맨위 function 안에 props를 써줘야한다. 그리고 props.프롭스이름 을 해서 값을 나타낸다. */}
+            {name} {location}<br />
+            {/* props를 받을 땐 맨위 function 안에 props를 써줘야한다. 그리고 props.프롭스이름(예시>props.name) 을 해서 값을 나타낸다. */}
+            {/* props를 여러개 받을땐 위에서 const {프롭스명 리스트} = props;해주고 아래에선 프롭스명만 쓴다. */}
             {numberA+numberB}
         </body>
         // 리액트는 최상위 태그를 하나만 쓸 수 있는데(이건 Vue.js랑도 비슷하네)
