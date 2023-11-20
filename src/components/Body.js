@@ -1,5 +1,6 @@
 import './Body.css';
 // 스타일 불러오는 법은 이렇게.
+import {useState} from "react";
 import State from './State';
 
 function Body(props) {
@@ -10,9 +11,10 @@ function Body(props) {
     // 객체를 찍으려면 프로퍼티에 접근해서 값을 가져오는 수밖에 없다.
     const {name, location} = props;
     // 프롭스를 여러개 보낼때는 이렇게 쓴다.
+    const [ numberC, setNumber ] = useState(0);
 
     function clickBtn() {
-        alert("!");        
+        setNumber(numberC + 1);      
     }
     return (
         <body>
@@ -25,9 +27,10 @@ function Body(props) {
             {/* props를 여러개 받을땐 위에서 const {프롭스명 리스트} = props;해주고 아래에선 프롭스명만 쓴다. */}
             {numberA+numberB}
 
-            <button onClick={clickBtn}>경고버튼</button>
+            <button onClick={clickBtn}>버튼</button>
             {/* 함수 호출은 이렇게. 여기는 따옴표 안에가 아니라 걍 써버리네? */}
-            <State />
+            <State number={numberC} />
+            {/* 자식요소로 state 보내는 법. 변수명=보낼상태값 하고 자식요소에선 이름에 ({변수명}) 해주면 받아봄 */}
         </body>
         // 리액트는 최상위 태그를 하나만 쓸 수 있는데(이건 Vue.js랑도 비슷하네)
         // 구태여 태그 여러개를 쓰고 싶다면 <React.Fragment> </React.Fragment>로 감싸주자. 얘는 렌더링되지 않는다.

@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-function State() {
+function State({number}) {
     const [ vaR, funcTion ] = useState('토끼');
     // const [ option, setOption ] = useState('');
     const [ state, setState ] = useState({
@@ -33,6 +33,7 @@ function State() {
             </select>
             {state.text}
             {state.option}
+            {number}
         </div>
     );
     
