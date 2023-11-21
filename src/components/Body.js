@@ -2,6 +2,7 @@ import './Body.css';
 // 스타일 불러오는 법은 이렇게.
 import {useState} from "react";
 import State from './State';
+import Ref from './Ref';
 
 function Body(props) {
     const numberA = 1;
@@ -31,6 +32,8 @@ function Body(props) {
             {/* 함수 호출은 이렇게. 여기는 따옴표 안에가 아니라 걍 써버리네? */}
             <State number={numberC} />
             {/* 자식요소로 state 보내는 법. 변수명=보낼상태값 하고 자식요소에선 이름에 ({변수명}) 해주면 받아봄 */}
+
+            <Ref />
         </body>
         // 리액트는 최상위 태그를 하나만 쓸 수 있는데(이건 Vue.js랑도 비슷하네)
         // 구태여 태그 여러개를 쓰고 싶다면 <React.Fragment> </React.Fragment>로 감싸주자. 얘는 렌더링되지 않는다.
